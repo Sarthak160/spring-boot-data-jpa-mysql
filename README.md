@@ -104,3 +104,23 @@ Run both Back-end & Front-end in one place:
 mvn spring-boot:run
 ```
 
+Curls - 
+```
+curl -X POST -H "Content-Type: application/json" -d '{"title":"New Tutorial","description":"Description","published":true}' http://localhost:8080/api/tutorials
+```
+
+```
+curl -X GET http://localhost:8080/api/tutorials
+```
+
+```
+curl -X GET http://localhost:8080/api/tutorials/1
+```
+
+```
+curl -X PUT -H "Content-Type: application/json" -d '{"title":"Updated Tutorial","description":"Description","published":true}' http://localhost:8080/api/tutorials/1
+```
+
+```
+curl -X DELETE http://localhost:8080/api/tutorials/1
+```
