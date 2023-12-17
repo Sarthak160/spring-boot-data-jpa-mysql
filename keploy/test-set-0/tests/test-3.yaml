@@ -1,6 +1,6 @@
 version: api.keploy.io/v1beta1
 kind: Http
-name: test-1
+name: test-3
 spec:
     metadata: {}
     req:
@@ -16,30 +16,30 @@ spec:
             User-Agent: curl/8.1.2
         body: '{"title":"New Tutorial","description":"Description","published":true}'
         body_type: ""
-        timestamp: 2023-12-17T09:53:33.368144812Z
+        timestamp: 2023-12-17T09:53:35.676975861Z
         host: ""
     resp:
         status_code: 201
         header:
             Content-Type: application/json
-            Date: Sun, 17 Dec 2023 09:53:33 GMT
+            Date: Sun, 17 Dec 2023 09:53:34 GMT
             Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
-        body: '{"id":1,"title":"New Tutorial","description":"Description","published":false}'
+        body: '{"id":3,"title":"New Tutorial","description":"Description","published":false}'
         body_type: ""
         status_message: ""
         proto_major: 0
         proto_minor: 0
-        timestamp: 2023-12-17T09:53:36.555309836Z
+        timestamp: 2023-12-17T09:53:38.520223563Z
     objects: []
     assertions:
         noise:
             header.Date: []
-    created: 1702806816
+    created: 1702806818
 curl: |-
     curl --request POST \
       --url http://localhost:8080/api/tutorials \
-      --header 'Host: localhost:8080' \
       --header 'Accept: */*' \
       --header 'Content-Type: application/json' \
       --header 'User-Agent: curl/8.1.2' \
+      --header 'Host: localhost:8080' \
       --data '{"title":"New Tutorial","description":"Description","published":true}'
