@@ -16,25 +16,26 @@ spec:
             User-Agent: curl/8.1.2
         body: '{"title":"New Tutorial","description":"Description","published":true}'
         body_type: ""
-        timestamp: 2023-12-17T09:53:33.368144812Z
+        timestamp: 2023-12-19T19:59:42.112712513Z
         host: ""
     resp:
         status_code: 201
         header:
             Content-Type: application/json
-            Date: Sun, 17 Dec 2023 09:53:33 GMT
+            Date: Tue, 19 Dec 2023 19:59:42 GMT
             Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
-        body: '{"id":1,"title":"New Tutorial","description":"Description","published":false}'
+        body: '{"id":102,"title":"New Tutorial","description":"Description","published":false}'
         body_type: ""
         status_message: ""
         proto_major: 0
         proto_minor: 0
-        timestamp: 2023-12-17T09:53:36.555309836Z
+        timestamp: 2023-12-19T19:59:45.019396484Z
     objects: []
     assertions:
         noise:
+            body.id: []
             header.Date: []
-    created: 1702806816
+    created: 1703015985
 curl: |-
     curl --request POST \
       --url http://localhost:8080/api/tutorials \
