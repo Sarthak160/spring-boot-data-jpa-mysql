@@ -1,0 +1,46 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-1
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/api/tutorials
+        header:
+            Accept: '*/*'
+            Content-Length: "71"
+            Content-Type: application/json
+            Host: localhost:8080
+            User-Agent: curl/8.1.2
+        body: '{"title":"New Tutorial-1","description":"Description","published":true}'
+        body_type: ""
+        timestamp: 2023-12-24T06:35:38.518678381Z
+        host: ""
+    resp:
+        status_code: 201
+        header:
+            Content-Type: application/json
+            Date: Sun, 24 Dec 2023 06:35:38 GMT
+            Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+        body: '{"id":402,"title":"New Tutorial-1","description":"Description","published":false}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2023-12-24T06:35:41.461258384Z
+    objects: []
+    assertions:
+        noise:
+            body.id: []
+            header.Date: []
+    created: 1703399741
+curl: |-
+    curl --request POST \
+      --url http://localhost:8080/api/tutorials \
+      --header 'Accept: */*' \
+      --header 'Content-Type: application/json' \
+      --header 'User-Agent: curl/8.1.2' \
+      --header 'Host: localhost:8080' \
+      --data '{"title":"New Tutorial-1","description":"Description","published":true}'

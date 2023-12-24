@@ -1,0 +1,46 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-5
+spec:
+    metadata: {}
+    req:
+        method: PUT
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/api/tutorials/403
+        header:
+            Accept: '*/*'
+            Content-Length: "74"
+            Content-Type: application/json
+            Host: localhost:8080
+            User-Agent: curl/8.1.2
+        body: '{"title":"New Tutorial-2","description":"Description 2","published":false}'
+        body_type: ""
+        timestamp: 2023-12-24T06:39:43.645903524Z
+        host: ""
+    resp:
+        status_code: 200
+        header:
+            Content-Type: application/json
+            Date: Sun, 24 Dec 2023 06:39:43 GMT
+            Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+        body: '{"id":403,"title":"New Tutorial-2","description":"Description 2","published":false}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2023-12-24T06:39:46.646902036Z
+    objects: []
+    assertions:
+        noise:
+            body.id: []
+            header.Date: []
+    created: 1703399986
+curl: |-
+    curl --request PUT \
+      --url http://localhost:8080/api/tutorials/403 \
+      --header 'Content-Type: application/json' \
+      --header 'User-Agent: curl/8.1.2' \
+      --header 'Host: localhost:8080' \
+      --header 'Accept: */*' \
+      --data '{"title":"New Tutorial-2","description":"Description 2","published":false}'

@@ -1,15 +1,15 @@
 version: api.keploy.io/v1beta1
 name: report-2
-status: FAILED
-success: 0
-failure: 2
+status: PASSED
+success: 2
+failure: 0
 total: 2
 tests:
     - kind: Http
       name: report-2
-      status: FAILED
-      started: 1703016312
-      completed: 1703016312
+      status: PASSED
+      started: 1703400060
+      completed: 1703400060
       test_case_path: /Users/sarthak_1/Documents/Keploy/v2/v2-final/spring-boot-data-jpa-mysql/keploy/test-set-0
       mock_path: ""
       test_case_id: test-1
@@ -20,11 +20,11 @@ tests:
         url: http://localhost:8080/api/tutorials
         header:
             Accept: '*/*'
-            Content-Length: "69"
+            Content-Length: "71"
             Content-Type: application/json
             Host: localhost:8080
             User-Agent: curl/8.1.2
-        body: '{"title":"New Tutorial","description":"Description","published":true}'
+        body: '{"title":"New Tutorial-1","description":"Description","published":true}'
         body_type: ""
         timestamp: 0001-01-01T00:00:00Z
         host: ""
@@ -32,40 +32,41 @@ tests:
         status_code: 201
         header:
             Content-Type: application/json
-            Date: Tue, 19 Dec 2023 19:59:42 GMT
+            Date: Sun, 24 Dec 2023 06:23:07 GMT
             Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
-        body: '{"id":102,"title":"New Tutorial","description":"Description","published":false}'
+        body: '{"id":352,"title":"New Tutorial-1","description":"Description","published":false}'
         body_type: ""
         status_message: ""
         proto_major: 0
         proto_minor: 0
         timestamp: 0001-01-01T00:00:00Z
       noise:
-        body.id: []
         header.Date: []
       result:
         status_code:
-            normal: false
+            normal: true
             expected: 201
-            actual: 0
+            actual: 201
         headers_result:
-            - normal: false
+            - normal: true
               expected:
                 key: Content-Type
                 value:
                     - application/json
               actual:
                 key: Content-Type
-                value: []
+                value:
+                    - application/json
             - normal: true
               expected:
                 key: Date
                 value:
-                    - Tue, 19 Dec 2023 19:59:42 GMT
+                    - Sun, 24 Dec 2023 06:23:07 GMT
               actual:
                 key: Date
-                value: []
-            - normal: false
+                value:
+                    - Sun, 24 Dec 2023 06:41:00 GMT
+            - normal: true
               expected:
                 key: Vary
                 value:
@@ -74,18 +75,21 @@ tests:
                     - Access-Control-Request-Headers
               actual:
                 key: Vary
-                value: []
+                value:
+                    - Origin
+                    - Access-Control-Request-Method
+                    - Access-Control-Request-Headers
         body_result:
-            - normal: false
-              type: PLAIN
-              expected: '{"id":102,"title":"New Tutorial","description":"Description","published":false}'
-              actual: 'Post "http://localhost:8080/api/tutorials": dial tcp [::1]:8080: connect: connection refused'
+            - normal: true
+              type: JSON
+              expected: '{"id":352,"title":"New Tutorial-1","description":"Description","published":false}'
+              actual: '{"id":352,"title":"New Tutorial-1","description":"Description","published":false}'
         dep_result: []
     - kind: Http
       name: report-2
-      status: FAILED
-      started: 1703016313
-      completed: 1703016313
+      status: PASSED
+      started: 1703400060
+      completed: 1703400060
       test_case_path: /Users/sarthak_1/Documents/Keploy/v2/v2-final/spring-boot-data-jpa-mysql/keploy/test-set-0
       mock_path: ""
       test_case_id: test-2
@@ -96,11 +100,11 @@ tests:
         url: http://localhost:8080/api/tutorials
         header:
             Accept: '*/*'
-            Content-Length: "69"
+            Content-Length: "71"
             Content-Type: application/json
             Host: localhost:8080
             User-Agent: curl/8.1.2
-        body: '{"title":"New Tutorial","description":"Description","published":true}'
+        body: '{"title":"New Tutorial-1","description":"Description","published":true}'
         body_type: ""
         timestamp: 0001-01-01T00:00:00Z
         host: ""
@@ -108,24 +112,23 @@ tests:
         status_code: 201
         header:
             Content-Type: application/json
-            Date: Tue, 19 Dec 2023 19:59:56 GMT
+            Date: Sun, 24 Dec 2023 06:23:09 GMT
             Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
-        body: '{"id":103,"title":"New Tutorial","description":"Description","published":false}'
+        body: '{"id":353,"title":"New Tutorial-1","description":"Description","published":false}'
         body_type: ""
         status_message: ""
         proto_major: 0
         proto_minor: 0
         timestamp: 0001-01-01T00:00:00Z
       noise:
-        body.id: []
         header.Date: []
       result:
         status_code:
-            normal: false
+            normal: true
             expected: 201
-            actual: 0
+            actual: 201
         headers_result:
-            - normal: false
+            - normal: true
               expected:
                 key: Vary
                 value:
@@ -134,27 +137,32 @@ tests:
                     - Access-Control-Request-Headers
               actual:
                 key: Vary
-                value: []
-            - normal: false
+                value:
+                    - Origin
+                    - Access-Control-Request-Method
+                    - Access-Control-Request-Headers
+            - normal: true
               expected:
                 key: Content-Type
                 value:
                     - application/json
               actual:
                 key: Content-Type
-                value: []
+                value:
+                    - application/json
             - normal: true
               expected:
                 key: Date
                 value:
-                    - Tue, 19 Dec 2023 19:59:56 GMT
+                    - Sun, 24 Dec 2023 06:23:09 GMT
               actual:
                 key: Date
-                value: []
+                value:
+                    - Sun, 24 Dec 2023 06:41:00 GMT
         body_result:
-            - normal: false
-              type: PLAIN
-              expected: '{"id":103,"title":"New Tutorial","description":"Description","published":false}'
-              actual: 'Post "http://localhost:8080/api/tutorials": dial tcp [::1]:8080: connect: connection refused'
+            - normal: true
+              type: JSON
+              expected: '{"id":353,"title":"New Tutorial-1","description":"Description","published":false}'
+              actual: '{"id":353,"title":"New Tutorial-1","description":"Description","published":false}'
         dep_result: []
 test_set: test-set-0

@@ -1,0 +1,46 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-3
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/api/tutorials
+        header:
+            Accept: '*/*'
+            Content-Length: "71"
+            Content-Type: application/json
+            Host: localhost:8080
+            User-Agent: curl/8.1.2
+        body: '{"title":"New Tutorial-1","description":"Description","published":true}'
+        body_type: ""
+        timestamp: 2023-12-24T06:37:19.8668242Z
+        host: ""
+    resp:
+        status_code: 200
+        header:
+            Content-Type: application/json
+            Date: Sun, 24 Dec 2023 06:37:20 GMT
+            Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+        body: '[{"id":1,"title":"New Tutorial","description":"Description","published":false},{"id":2,"title":"New Tutorial","description":"Description","published":false},{"id":3,"title":"New Tutorial","description":"Description","published":false},{"id":52,"title":"New Tutorial","description":"Description","published":false},{"id":53,"title":"New Tutorial","description":"Description","published":false},{"id":54,"title":"New Tutorial","description":"Description","published":false},{"id":102,"title":"New Tutorial","description":"Description","published":false},{"id":103,"title":"New Tutorial","description":"Description","published":false},{"id":152,"title":"New Tutorial","description":"Description","published":false},{"id":153,"title":"New Tutorial","description":"Description","published":false},{"id":154,"title":"New Tutorial","description":"Description","published":false},{"id":155,"title":"New Tutorial","description":"Description","published":false},{"id":202,"title":"New Tutorial","description":"Description","published":false},{"id":252,"title":"New Tutorial","description":"Description","published":false},{"id":253,"title":"New Tutorial","description":"Description","published":false},{"id":254,"title":"New Tutorial","description":"Description","published":false},{"id":255,"title":"New Tutorial","description":"Description","published":false},{"id":302,"title":"New Tutorial","description":"Description","published":false},{"id":303,"title":"New Tutorial-1","description":"Description","published":false},{"id":352,"title":"New Tutorial-1","description":"Description","published":false},{"id":353,"title":"New Tutorial-1","description":"Description","published":false},{"id":402,"title":"New Tutorial-1","description":"Description","published":false},{"id":403,"title":"New Tutorial-1","description":"Description","published":false}]'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2023-12-24T06:37:23.091674777Z
+    objects: []
+    assertions:
+        noise:
+            body.id: []
+            header.Date: []
+    created: 1703399843
+curl: |-
+    curl --request GET \
+      --url http://localhost:8080/api/tutorials \
+      --header 'User-Agent: curl/8.1.2' \
+      --header 'Host: localhost:8080' \
+      --header 'Accept: */*' \
+      --header 'Content-Type: application/json' \
+      --data '{"title":"New Tutorial-1","description":"Description","published":true}'

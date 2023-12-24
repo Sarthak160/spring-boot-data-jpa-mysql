@@ -1,0 +1,42 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-6
+spec:
+    metadata: {}
+    req:
+        method: DELETE
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/api/tutorials/403
+        header:
+            Accept: '*/*'
+            Content-Type: application/json
+            Host: localhost:8080
+            User-Agent: curl/8.1.2
+        body: ""
+        body_type: ""
+        timestamp: 2023-12-24T06:40:02.079386453Z
+        host: ""
+    resp:
+        status_code: 204
+        header:
+            Date: Sun, 24 Dec 2023 06:40:02 GMT
+            Vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+        body: ""
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2023-12-24T06:40:05.083826701Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1703400005
+curl: |
+    curl --request DELETE \
+      --url http://localhost:8080/api/tutorials/403 \
+      --header 'Host: localhost:8080' \
+      --header 'Accept: */*' \
+      --header 'Content-Type: application/json' \
+      --header 'User-Agent: curl/8.1.2' \
